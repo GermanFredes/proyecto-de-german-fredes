@@ -1,6 +1,6 @@
 from fastapi import FastAPI , Depends
 from modelos import Cliente , Pedido , Producto 
-from main import Manager , getCursor
+from manager import Manager , getCursor
 import psycopg
 
 app = FastAPI()
