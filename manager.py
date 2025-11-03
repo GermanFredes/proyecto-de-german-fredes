@@ -122,7 +122,7 @@ class Manager:
         FROM pedido
         INNER JOIN cliente ON pedido.cliente_id = cliente.cliente_id
         INNER JOIN producto ON pedido.producto_id = producto.producto_id
-        WHERE cliente.cliente_id = ?""", (id,)).fetchall()
+        WHERE cliente.cliente_id = %s""", (id,)).fetchall()
       return [{"producto": row[0], "precio": row[1], "cliente":row[2]} for row in res]
         
   
